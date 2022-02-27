@@ -4,10 +4,10 @@ const CalculateMod11 = require('./CalculateMod11');
 
 class ValidateConvenioService {
   validate(linhaDigitavel) {
-    const value = linhaDigitavel.substr(4, 14);
-    const amount = `${Number(value.substr(0, value.length - 2))}.${value.slice(
-      -2,
-    )}`;
+    const value = linhaDigitavel.substr(4, 7) + linhaDigitavel.substr(12, 4);
+    const amount = `${Number(value.substr(0, 9))}.${value.slice(-2)}`;
+    const dueDate = linhaDigitavel.substr(20, 3) + linhaDigitavel.substr(24, 5);
+
     const dvg = Number(linhaDigitavel[2]);
 
     const campos = [
@@ -36,7 +36,7 @@ class ValidateConvenioService {
             CalculateMod10.calculate(campo.aux) === Number(campo.verificador),
         )
       ) {
-        throw new AppError('Boleto inválido', 400);
+        throw new AppError('Digito Verificador inválido Modulo 10', 400);
       }
     } else if (dvg === 8 || dvg === 9) {
       if (
@@ -46,7 +46,7 @@ class ValidateConvenioService {
             Number(campo.verificador),
         )
       ) {
-        throw new AppError('Boleto inválido', 400);
+        throw new AppError('Digito Verificador inválido Modulo 11', 400);
       }
     } else {
       throw new AppError('Boleto inválido', 400);
@@ -55,6 +55,7 @@ class ValidateConvenioService {
     return {
       barCode: linhaDigitavel,
       amount,
+      dueDate,
     };
   }
 }

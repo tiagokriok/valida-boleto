@@ -5,9 +5,6 @@ const ExpirationFactor = require('../services/ExpirationFactor');
 
 class BoletoController {
   async validate(request, response) {
-    /**
-     * TODO: Verificar se a linha informada é um boleto do tipo Título ou Convenio
-     */
     const { linha } = request.params;
 
     const linhaDigitavel = linha.replace(/( |-|\.)/g, '');

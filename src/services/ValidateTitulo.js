@@ -37,7 +37,7 @@ class ValidateTituloService {
           CalculateMod10.calculate(campo.aux) === Number(campo.verificador),
       )
     ) {
-      throw new AppError('Boleto inválido', 400);
+      throw new AppError('Digito Verificador inválido Modulo 10', 400);
     }
 
     const dvMod11 = barCode[4];
@@ -45,7 +45,7 @@ class ValidateTituloService {
     const block = barCode.substring(0, 4) + barCode.substring(5);
 
     if (!(CalculateMod11.calculateBank(block) === Number(dvMod11))) {
-      throw new AppError('Boleto inválido', 400);
+      throw new AppError('Digito Verificador inválido Modulo 11', 400);
     }
 
     return {
