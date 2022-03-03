@@ -10,9 +10,9 @@ class ValidateConvenioService {
     const dueDateLine =
       linhaDigitavel.substr(20, 3) + linhaDigitavel.substr(24, 5);
 
-    const year = dueDateLine.substring(0, 4);
-    const month = dueDateLine.substring(4, 2);
-    const day = dueDateLine.substr(6, 2);
+    const year = Number(dueDateLine.substr(0, 4));
+    const month = Number(dueDateLine.substr(4, 2));
+    const day = Number(dueDateLine.substr(6, 2));
 
     const dvg = Number(linhaDigitavel[2]);
 
