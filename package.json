@@ -1,12 +1,13 @@
 {
   "name": "ewally-challenge",
   "version": "1.0.0",
-  "description": "API to store contacts",
+  "description": "API Validate Invoices",
   "main": "src/server.js",
   "author": "Tiago Carioca",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
   },
   "dependencies": {
     "express": "^4.17.3",
