@@ -43,7 +43,7 @@ Inicie o servidor
 ### Retorna Código de Barra, Valor e Data de Validade
 
 ```http
-  GET /:linha
+  GET http://localhost:3333/boleto/:linha
 ```
 
 | Parâmetro | Tipo     | Descrição                                    |
