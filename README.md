@@ -38,6 +38,16 @@ Inicie o servidor
   yarn start
 ```
 
+## Testes Unitários
+
+- Executar os testes: `yarn test`
+
+1. **`should be able to validate bank bonds`**: Valida Títulos Bancários.
+2. **`should be able to validate concessionaire payments`**: Valida Boletos de Cobrança.
+3. **`should throw an error if has letters in typeable line`**: Verifica se tiver letras em uma linha digitável.
+4. **`should throw an error if invalid verifier digit module 10`**: Valida os dígitos verificadores de acordo com o modulo 10.
+5. **`should throw an error if invalid verifier digit module 11`**: Valida os dígitos verificadores de acordo com o modulo 11.
+
 ## Documentação da API
 
 ### Retorna Código de Barra, Valor e Data de Validade
