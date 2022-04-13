@@ -42,6 +42,19 @@ Inicie o servidor
 
 ### Retorna Código de Barra, Valor e Data de Validade
 
+O Arquivo `Insomnia_Doc_API` pode ser importado no Insomnia para facilitar os teste da API.
+
+### Exemplos
+
+- Boleto do tipo Título
+  - 34191093217220104303024750000002388540000033320
+  - 34191096363478638719042686080005789560000028913
+
+- Boleto do tipo Convênio
+  - 858200000015671402702007341196306007014220210799
+  - 826800000018416504770007002022151415604401001044
+  - 836600000050066300470003000000002303147403220089
+
 ```http
   GET http://localhost:3333/boleto/:linha
 ```
