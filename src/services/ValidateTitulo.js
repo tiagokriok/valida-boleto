@@ -5,13 +5,13 @@ const CalculateMod11 = require('./CalculateMod11');
 class ValidateTituloService {
   validate(linhaDigitavel) {
     const barCode =
-      linhaDigitavel.substr(0, 4) +
-      linhaDigitavel.substr(32, 15) +
-      linhaDigitavel.substr(4, 5) +
-      linhaDigitavel.substr(10, 10) +
-      linhaDigitavel.substr(21, 10);
+      linhaDigitavel.substring(0, 4) +
+      linhaDigitavel.substring(32, 47) +
+      linhaDigitavel.substring(4, 9) +
+      linhaDigitavel.substring(10, 20) +
+      linhaDigitavel.substring(21, 31);
 
-    const value = linhaDigitavel.substr(37, 10);
+    const value = linhaDigitavel.substring(37, 47);
     const amount = `${Number(value.substr(0, value.length - 2))}.${value.slice(
       -2,
     )}`;

@@ -4,15 +4,16 @@ const CalculateMod11 = require('./CalculateMod11');
 
 class ValidateConvenioService {
   validate(linhaDigitavel) {
-    const value = linhaDigitavel.substr(4, 7) + linhaDigitavel.substr(12, 4);
-    const amount = `${Number(value.substr(0, 9))}.${value.slice(-2)}`;
+    const value =
+      linhaDigitavel.substring(4, 11) + linhaDigitavel.substring(12, 16);
+    const amount = `${Number(value.substring(0, 9))}.${value.slice(-2)}`;
 
     const dueDateLine =
-      linhaDigitavel.substr(20, 3) + linhaDigitavel.substr(24, 5);
+      linhaDigitavel.substring(20, 23) + linhaDigitavel.substring(24, 29);
 
-    const year = Number(dueDateLine.substr(0, 4));
-    const month = Number(dueDateLine.substr(4, 2));
-    const day = Number(dueDateLine.substr(6, 2));
+    const year = Number(dueDateLine.substring(0, 5));
+    const month = Number(dueDateLine.substring(4, 6));
+    const day = Number(dueDateLine.substring(6, 8));
 
     const dvg = Number(linhaDigitavel[2]);
 
